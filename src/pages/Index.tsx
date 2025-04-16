@@ -2,6 +2,7 @@
 import ProductCard from "@/components/ProductCard";
 import SpecialOffer from "@/components/SpecialOffer";
 import TrustBadges from "@/components/TrustBadges";
+import CountdownTimer from "@/components/CountdownTimer";
 import { useToast } from "@/components/ui/use-toast";
 
 // Product data
@@ -65,10 +66,12 @@ const Index = () => {
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <header className="text-center mb-8">
+          <CountdownTimer />
+          
           <h1 className="text-3xl md:text-4xl font-playfair font-bold text-boutiqueDarkPink mb-3 leading-tight">
             Promoção por tempo limitado - Kit de Vestidos no Atacado
           </h1>
-          <p className="text-xl md:text-2xl font-playfair text-boutiqueGold mb-2">
+          <p className="text-xl md:text-2xl font-playfair text-black font-bold mb-2">
             A partir de R$49,90 cada peça
           </p>
           <p className="text-boutiqueGray max-w-2xl mx-auto mb-4">
@@ -76,12 +79,6 @@ const Index = () => {
           </p>
           
           <SpecialOffer />
-          
-          <div className="bg-white rounded-lg p-6 mb-8 shadow-md">
-            <h2 className="text-2xl font-playfair font-bold text-boutiqueDarkPink mb-4">
-              Kits especiais para você revender e lucrar com moda evangélica!
-            </h2>
-          </div>
         </header>
         
         {/* Products Grid */}
