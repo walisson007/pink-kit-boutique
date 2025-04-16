@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				boutiqueRosaPink: '#FDECEF',
+				boutiqueDarkPink: '#D6336C',
+				boutiqueGold: '#EEC373',
+				boutiqueGray: '#666666',
+				boutiqueLightGray: '#999999',
+			},
+			fontFamily: {
+				'playfair': ['Playfair Display', 'serif'],
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'poppins': ['Poppins', 'sans-serif'],
+				'raleway': ['Raleway', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
