@@ -66,11 +66,15 @@ const productData = [
 const Index = () => {
   const { toast } = useToast();
   
+  const whatsappGeneralMessage = "Olá, acabei de ver os kits no site e já escolhi o meu. Quero fechar o pedido com vocês!";
+  const whatsappGeneralLink = `https://wa.me/5538997483702?text=${encodeURIComponent(whatsappGeneralMessage)}`;
+  
   const handlePlaceOrder = () => {
     toast({
       title: "Pedido em processamento",
       description: "Você será redirecionado para finalizar seu pedido em instantes.",
     });
+    // Redirect will happen via the link, not programmatically
   };
 
   return (
@@ -115,12 +119,15 @@ const Index = () => {
           <h2 className="text-2xl font-playfair font-bold text-boutiqueDarkPink mb-4">
             Gostou? Já escolheu seu kit? Clique abaixo e finalize seu pedido com a gente!
           </h2>
-          <button 
+          <a 
+            href={whatsappGeneralLink}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={handlePlaceOrder}
-            className="px-6 py-3 bg-boutiqueDarkPink text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105"
+            className="px-6 py-3 bg-boutiqueDarkPink text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 inline-block"
           >
             Fechar meu pedido agora
-          </button>
+          </a>
         </div>
         
         {/* Trust Badges */}

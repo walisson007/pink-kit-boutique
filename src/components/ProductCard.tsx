@@ -23,6 +23,11 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  // Extract kit name for WhatsApp message
+  const kitName = name.split('-')[0].trim();
+  const whatsappMessage = `Olá, escolhi o ${kitName} e quero fechar meu pedido!`;
+  const whatsappLink = `https://wa.me/5538997483702?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
       <div className="relative">
@@ -71,7 +76,9 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
           
           <div className="flex justify-end">
             <a 
-              href="#finalizar-pedido"
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 bg-boutiqueDarkPink text-white rounded-md font-medium hover:bg-opacity-90 transition-colors duration-200"
             >
               Comprar
