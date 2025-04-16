@@ -6,11 +6,13 @@ interface ProductCardProps {
   id: string;
   name: string;
   price: string;
+  priceEach?: string;
+  sizeInfo?: string;
   description: string;
   images: string[];
 }
 
-const ProductCard = ({ id, name, price, description, images }: ProductCardProps) => {
+const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images }: ProductCardProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const goToNextImage = () => {
@@ -60,15 +62,21 @@ const ProductCard = ({ id, name, price, description, images }: ProductCardProps)
       
       <div className="p-4">
         <h2 className="text-xl font-montserrat font-bold text-boutiqueDarkPink mb-2">{name}</h2>
-        <p className="text-boutiqueGray mb-4 text-sm">{description}</p>
-        <div className="flex justify-between items-center">
-          <div className="text-lg font-semibold text-boutiqueDarkPink">{price}</div>
-          <a 
-            href="#finalizar-pedido"
-            className="px-4 py-2 bg-boutiqueDarkPink text-white rounded-md font-medium hover:bg-opacity-90 transition-colors duration-200"
-          >
-            Comprar
-          </a>
+        <p className="text-boutiqueGray mb-3 text-sm">{description}</p>
+        
+        <div className="mt-3">
+          <div className="text-xl font-semibold text-boutiqueDarkPink mb-1">{price}</div>
+          {priceEach && <p className="text-sm text-boutiqueGray mb-1">{priceEach}</p>}
+          {sizeInfo && <p className="text-sm text-boutiqueGray mb-3">{sizeInfo}</p>}
+          
+          <div className="flex justify-end">
+            <a 
+              href="#finalizar-pedido"
+              className="px-4 py-2 bg-boutiqueDarkPink text-white rounded-md font-medium hover:bg-opacity-90 transition-colors duration-200"
+            >
+              Comprar
+            </a>
+          </div>
         </div>
       </div>
     </div>

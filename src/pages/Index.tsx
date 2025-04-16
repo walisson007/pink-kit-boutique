@@ -9,44 +9,56 @@ import { useToast } from "@/components/ui/use-toast";
 const productData = [
   {
     id: "kit1",
-    name: "Kit Básico - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Vestidos básicos para o dia a dia, perfeitos para igreja e trabalho.",
+    name: "Kit Santidade - 7 Peças",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos midi com manga, discretos e muito elegantes. Ideal para igrejas e eventos.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
     id: "kit2",
     name: "Kit Elegância - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Vestidos mais formais para eventos especiais na igreja.",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
     id: "kit3",
     name: "Kit Primavera - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Vestidos com estampas florais, perfeitos para a primavera.",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos florais e coloridos, perfeitos para a temporada primavera-verão, com tecidos leves e confortáveis.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
     id: "kit4",
-    name: "Kit Trabalho - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Vestidos sofisticados ideais para o ambiente corporativo.",
+    name: "Kit Delicadeza - 7 Peças",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos em tons suaves com estampas de borboletas, flores e detalhes delicados. Perfeitos para ocasiões especiais.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
     id: "kit5",
-    name: "Kit Casual - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Vestidos casuais e confortáveis para o dia a dia.",
+    name: "Kit Jardim - 7 Peças",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos com estampas florais vibrantes, perfeitos para eventos ao ar livre e celebrações. Modelos frescos e encantadores.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
     id: "kit6",
-    name: "Kit Completo - 7 Peças",
-    price: "R$49,90/cada",
-    description: "Uma seleção especial dos nossos melhores vestidos evangélicos.",
+    name: "Kit Tropical - 7 Peças",
+    price: "R$349,00",
+    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
+    sizeInfo: "Tamanho único 36/42",
+    description: "Vestidos inspirados em cores e estampas tropicais, com modelagem moderna e confortável. Perfeitos para o verão.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
 ];
@@ -63,11 +75,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-boutiqueRosaPink">
+      {/* Countdown timer at the very top spanning full width */}
+      <CountdownTimer />
+      
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <header className="text-center mb-8">
-          <CountdownTimer />
-          
           <h1 className="text-3xl md:text-4xl font-playfair font-bold text-boutiqueDarkPink mb-3 leading-tight">
             Promoção por tempo limitado - Kit de Vestidos no Atacado
           </h1>
@@ -89,6 +102,8 @@ const Index = () => {
               id={product.id}
               name={product.name}
               price={product.price}
+              priceEach={product.priceEach}
+              sizeInfo={product.sizeInfo}
               description={product.description}
               images={product.images}
             />

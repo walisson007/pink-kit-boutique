@@ -29,9 +29,11 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="bg-black text-red-600 py-3 px-4 rounded-lg font-bold text-center mb-4">
-      <p className="text-lg mb-2">Essa Promoção encerra em</p>
-      <div className="text-2xl md:text-3xl tracking-wider">{timeRemaining}</div>
+    <div className="bg-black text-red-600 py-3 w-full font-bold text-center mb-6">
+      <div className="container mx-auto">
+        <p className="text-lg mb-2">Essa Promoção encerra em</p>
+        <div className="text-2xl md:text-3xl tracking-wider">{timeRemaining}</div>
+      </div>
     </div>
   );
 };
