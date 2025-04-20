@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Clock } from 'lucide-react';
 
 const CountdownTimer = () => {
   const [timeRemaining, setTimeRemaining] = useState<string>('');
@@ -29,10 +30,15 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="bg-black py-4 w-full font-bold text-center sticky top-0 z-50 shadow-md">
+    <div className="bg-gradient-to-r from-red-600 to-red-700 py-4 w-full text-center sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto px-4">
-        <p className="text-red-600 text-lg mb-1">Essa Promoção encerra em</p>
-        <div className="text-3xl md:text-4xl tracking-wider text-red-600 font-mono">{timeRemaining}</div>
+        <p className="text-white text-lg mb-2 font-medium flex items-center justify-center gap-2">
+          <Clock className="w-5 h-5" />
+          Essa Promoção encerra em
+        </p>
+        <div className="text-3xl md:text-4xl tracking-wider text-white font-mono bg-red-800/30 inline-block px-6 py-2 rounded-lg">
+          {timeRemaining}
+        </div>
       </div>
     </div>
   );

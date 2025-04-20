@@ -3,8 +3,8 @@ import SpecialOffer from "@/components/SpecialOffer";
 import TrustBadges from "@/components/TrustBadges";
 import CountdownTimer from "@/components/CountdownTimer";
 import { useToast } from "@/components/ui/use-toast";
+import { Truck } from "lucide-react";
 
-// Updated product data with the descriptions from the image
 const productData = [
   {
     id: "kit1",
@@ -76,25 +76,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Full-width countdown timer */}
+    <div className="min-h-screen bg-gradient-to-br from-red-50 to-white">
       <CountdownTimer />
       
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-boutiqueDarkPink mb-6 leading-tight">
-            Promoção por tempo limitado - Kit de Vestidos no Atacado
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <header className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 leading-tight">
+            Promoção por tempo limitado
+            <span className="block text-red-600 mt-2">Kit de Vestidos no Atacado</span>
           </h1>
-          <p className="text-2xl md:text-3xl font-playfair text-black font-bold mb-4">
+          <p className="text-2xl md:text-3xl text-gray-600 font-medium mb-12">
             A partir de R$49,90 cada peça
           </p>
           
           <SpecialOffer />
         </header>
         
-        {/* Products Grid - Improved responsive layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {productData.map((product) => (
             <ProductCard 
               key={product.id}
@@ -103,26 +101,26 @@ const Index = () => {
           ))}
         </div>
         
-        {/* Call to Action - Enhanced styling */}
-        <div className="bg-white border-2 border-boutiqueDarkPink rounded-2xl p-8 mt-16 mb-8 text-center shadow-lg">
-          <h2 className="text-2xl md:text-3xl font-playfair font-bold text-boutiqueDarkPink mb-6">
-            Gostou? Já escolheu seu kit? Clique abaixo e finalize seu pedido com a gente!
+        <div className="bg-gradient-to-br from-red-600 to-red-700 rounded-2xl p-12 mt-16 mb-8 text-center shadow-xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+            Gostou? Já escolheu seu kit?
+            <span className="block mt-2">Clique abaixo e finalize seu pedido com a gente!</span>
           </h2>
           <a 
             href={whatsappGeneralLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={handlePlaceOrder}
-            className="inline-block px-8 py-4 bg-boutiqueDarkPink text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-md"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-white text-red-600 rounded-xl font-bold text-xl hover:bg-red-50 transition-all duration-300 transform hover:scale-105 shadow-lg group"
           >
+            <Truck className="w-6 h-6 transition-transform group-hover:-translate-y-1" />
             Fechar meu pedido agora
           </a>
         </div>
         
-        {/* Trust Badges */}
         <TrustBadges />
         
-        <footer className="text-center text-boutiqueLightGray text-sm mt-12">
+        <footer className="text-center text-gray-500 text-sm mt-16">
           <p>© 2025 - Moda Evangélica Atacado | Todos os direitos reservados</p>
         </footer>
       </div>
