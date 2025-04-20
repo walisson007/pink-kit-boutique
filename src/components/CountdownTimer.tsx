@@ -30,7 +30,7 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-red-600 to-red-700 py-4 w-full text-center sticky top-0 z-50 shadow-lg">
+    <div className="bg-gradient-to-r from-red-600 to-red-700 py-4 w-full text-center">
       <div className="container mx-auto px-4">
         <p className="text-white text-lg mb-2 font-medium flex items-center justify-center gap-2">
           <Clock className="w-5 h-5" />
@@ -45,3 +45,4 @@ const CountdownTimer = () => {
 };
 
 export default CountdownTimer;
+

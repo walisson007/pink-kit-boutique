@@ -8,58 +8,76 @@ import { Truck } from "lucide-react";
 const productData = [
   {
     id: "kit1",
-    name: "Kit Elegância - 7 Peças",
+    name: "Kit Borboletas - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos românticos com estampas de borboletas em tons suaves. Design exclusivo e tecido premium.",
+    images: [
+      "/lovable-uploads/35cec54c-4ba7-4e6c-8801-74e3491728e8.png",
+      "/lovable-uploads/c4456235-671e-4686-95c1-7517751689cc.png"
+    ],
   },
   {
     id: "kit2",
-    name: "Kit Elegância - 7 Peças",
+    name: "Kit Floral Azul - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos em tons de azul com estampas florais delicadas. Perfeito para ocasiões especiais.",
+    images: [
+      "/lovable-uploads/9100225c-7318-4705-a39a-c8a9c0e0d973.png",
+      "/lovable-uploads/44d7b511-5b2c-4581-8e87-c09f93905700.png"
+    ],
   },
   {
     id: "kit3",
-    name: "Kit Primavera - 7 Peças",
+    name: "Kit Jardim Encantado - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos florais e coloridos, perfeitos para a temporada primavera-verão, com tecidos leves e confortáveis.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos com estampas florais vibrantes em fundo branco, design romântico e elegante.",
+    images: [
+      "/lovable-uploads/1a2cf923-6bd5-46ac-ab3b-02bcf7d42ae5.png",
+      "/lovable-uploads/99e92598-92fe-4157-a556-ec122075ff33.png"
+    ],
   },
   {
     id: "kit4",
-    name: "Kit Delicadeza - 7 Peças",
+    name: "Kit Girassol - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos em tons suaves com estampas de borboletas, flores e detalhes delicados. Perfeitos para ocasiões especiais.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos alegres com estampas de girassol, perfeitos para eventos ao ar livre e celebrações.",
+    images: [
+      "/lovable-uploads/1e6ef859-d681-4956-9d91-779f9ba0ae06.png",
+      "/lovable-uploads/b37c6f50-6ecd-4a43-9371-baecb293b7e5.png"
+    ],
   },
   {
     id: "kit5",
-    name: "Kit Jardim - 7 Peças",
+    name: "Kit Primavera Verde - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos com estampas florais vibrantes, perfeitos para eventos ao ar livre e celebrações. Modelos frescos e encantadores.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos em tom verde suave com estampas florais delicadas. Modelagem moderna e confortável.",
+    images: [
+      "/lovable-uploads/b2a15bd2-eb1e-4fea-9a5f-7b9058d367c6.png",
+      "/lovable-uploads/92e57007-6208-4d94-ac4e-5bee2d32458d.png"
+    ],
   },
   {
     id: "kit6",
-    name: "Kit Tropical - 7 Peças",
+    name: "Kit Elegância - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos inspirados em cores e estampas tropicais, com modelagem moderna e confortável. Perfeitos para o verão.",
-    images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
-  },
+    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
+    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
+    images: [
+      "/lovable-uploads/779bd83d-91a8-4a3e-b221-59807f6467fd.png",
+      "/lovable-uploads/f356eed6-ad4d-433b-8d05-77ba2e7246f7.png"
+    ],
+  }
 ];
 
 const Index = () => {
