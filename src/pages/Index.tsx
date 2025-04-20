@@ -8,74 +8,53 @@ import { Truck } from "lucide-react";
 const productData = [
   {
     id: "kit1",
-    name: "Kit Borboletas - 7 Peças",
+    name: "Kit Tropical - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
     sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos românticos com estampas de borboletas em tons suaves. Design exclusivo e tecido premium.",
+    description: "Kit de vestidos com estampas tropicais vibrantes e cortes modernos.",
     images: [
-      "/lovable-uploads/35cec54c-4ba7-4e6c-8801-74e3491728e8.png",
-      "/lovable-uploads/c4456235-671e-4686-95c1-7517751689cc.png"
+      "/lovable-uploads/b429ab87-fcf0-4e0b-aec9-991595b18811.png",
+      "/lovable-uploads/030e2637-e83a-45e1-8825-81f7cbc3764d.png",
+      "/lovable-uploads/373d2199-09dd-45a7-b724-375705cf90ea.png",
+      "/lovable-uploads/72215627-d6ab-4bac-bdac-9dd824873cc7.png",
+      "/lovable-uploads/d681c932-a700-457b-8838-8083122cc5a0.png",
+      "/lovable-uploads/7209cb2a-02b3-4e66-82f9-2f70eb35f9df.png",
+      "/lovable-uploads/1bca62cc-7494-4ebc-b4d5-c75081fd2a6c.png"
     ],
   },
   {
     id: "kit2",
-    name: "Kit Floral Azul - 7 Peças",
+    name: "Kit Clássico - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
     sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos em tons de azul com estampas florais delicadas. Perfeito para ocasiões especiais.",
+    description: "Kit de vestidos em tons clássicos com modelagem elegante.",
     images: [
-      "/lovable-uploads/9100225c-7318-4705-a39a-c8a9c0e0d973.png",
-      "/lovable-uploads/44d7b511-5b2c-4581-8e87-c09f93905700.png"
+      "/lovable-uploads/b1ebf12f-d8c1-4f1f-adf6-2b01ff29de6f.png",
+      "/lovable-uploads/bc4e947b-41de-4ce8-ba74-67857985b530.png",
+      "/lovable-uploads/f3deee82-213f-4a7a-8a4b-aece0d983314.png",
+      "/lovable-uploads/d50e0629-3200-4c54-8f51-76eaa4227941.png",
+      "/lovable-uploads/af6e9ced-fe6b-4ca5-a219-205992d158ab.png",
+      "/lovable-uploads/d1e54b61-4111-4b96-994a-37545f6b4275.png",
+      "/lovable-uploads/b115e9a8-67fb-4524-9716-42088f873397.png"
     ],
   },
   {
     id: "kit3",
-    name: "Kit Jardim Encantado - 7 Peças",
+    name: "Kit Sofisticado - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
     sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos com estampas florais vibrantes em fundo branco, design romântico e elegante.",
+    description: "Kit de vestidos sofisticados com acabamento premium.",
     images: [
-      "/lovable-uploads/1a2cf923-6bd5-46ac-ab3b-02bcf7d42ae5.png",
-      "/lovable-uploads/99e92598-92fe-4157-a556-ec122075ff33.png"
-    ],
-  },
-  {
-    id: "kit4",
-    name: "Kit Girassol - 7 Peças",
-    price: "R$349,00",
-    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos alegres com estampas de girassol, perfeitos para eventos ao ar livre e celebrações.",
-    images: [
-      "/lovable-uploads/1e6ef859-d681-4956-9d91-779f9ba0ae06.png",
-      "/lovable-uploads/b37c6f50-6ecd-4a43-9371-baecb293b7e5.png"
-    ],
-  },
-  {
-    id: "kit5",
-    name: "Kit Primavera Verde - 7 Peças",
-    price: "R$349,00",
-    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos em tom verde suave com estampas florais delicadas. Modelagem moderna e confortável.",
-    images: [
-      "/lovable-uploads/b2a15bd2-eb1e-4fea-9a5f-7b9058d367c6.png",
-      "/lovable-uploads/92e57007-6208-4d94-ac4e-5bee2d32458d.png"
-    ],
-  },
-  {
-    id: "kit6",
-    name: "Kit Elegância - 7 Peças",
-    price: "R$349,00",
-    priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
-    sizeInfo: "Tamanhos: M (40/42) e G (44/46)",
-    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
-    images: [
-      "/lovable-uploads/779bd83d-91a8-4a3e-b221-59807f6467fd.png",
-      "/lovable-uploads/f356eed6-ad4d-433b-8d05-77ba2e7246f7.png"
+      "/lovable-uploads/7c653cde-c60e-4354-84de-94399b6d8100.png",
+      "/lovable-uploads/3d177eef-7a6f-41be-b35a-6237414473e4.png",
+      "/lovable-uploads/eb0520ba-101c-42b1-b118-f3d48f26fb05.png",
+      "/lovable-uploads/86d3e570-3013-455d-a3ef-770367f1b872.png",
+      "/lovable-uploads/505253f4-38c8-493d-bca9-e129655675ed.png",
+      "/lovable-uploads/86d3e570-3013-455d-a3ef-770367f1b872.png",
+      "/lovable-uploads/bea70e97-6494-484f-ac61-83d7e6122e5d.png"
     ],
   }
 ];

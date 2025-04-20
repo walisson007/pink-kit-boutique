@@ -1,10 +1,15 @@
 
-import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Truck } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { Truck } from "lucide-react";
 import {
   Card,
   CardContent,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 interface ProductCardProps {
   id: string;
@@ -17,15 +22,18 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images }: ProductCardProps) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
 
-  const goToNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  useEffect(() => {
+    if (!api) return;
 
-  const goToPreviousImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 3000); // Muda a imagem a cada 3 segundos
+
+    return () => clearInterval(interval);
+  }, [api]);
 
   const kitName = name.split('-')[0].trim();
   const whatsappMessage = `Olá, escolhi o ${kitName} e quero fechar meu pedido!`;
@@ -34,36 +42,25 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-2xl bg-white">
       <div className="relative">
-        <div className="overflow-hidden h-[400px] relative">
-          <img 
-            src={images[currentImageIndex]} 
-            alt={`${name} - imagem ${currentImageIndex + 1}`} 
-            className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
-          />
-          
-          {images.length > 1 && (
-            <>
-              <button 
-                onClick={goToPreviousImage}
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg text-red-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
-                aria-label="Imagem anterior"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button 
-                onClick={goToNextImage}
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg text-red-600 transition-all duration-300 opacity-0 group-hover:opacity-100 hover:scale-110"
-                aria-label="Próxima imagem"
-              >
-                <ChevronRight size={24} />
-              </button>
-            </>
-          )}
+        <h2 className="text-2xl font-bold text-gray-800 text-center py-4 bg-gradient-to-r from-red-50 to-red-100">{name}</h2>
+        <div className="overflow-hidden h-[400px]">
+          <Carousel setApi={setApi} className="w-full">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index} className="relative">
+                  <img 
+                    src={image} 
+                    alt={`${name} - imagem ${index + 1}`} 
+                    className="w-full h-[400px] object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </div>
       
       <CardContent className="p-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">{name}</h2>
         <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
         
         <div className="space-y-3">
