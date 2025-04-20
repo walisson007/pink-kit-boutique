@@ -23,14 +23,13 @@ interface ProductCardProps {
 
 const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images }: ProductCardProps) => {
   const [api, setApi] = useState<any>();
-  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!api) return;
 
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 3000); // Muda a imagem a cada 3 segundos
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [api]);
@@ -40,9 +39,9 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
   const whatsappLink = `https://wa.me/5538997483702?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-2xl bg-white">
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl bg-white border border-pink-100">
       <div className="relative">
-        <h2 className="text-2xl font-bold text-gray-800 text-center py-4 bg-gradient-to-r from-red-50 to-red-100">{name}</h2>
+        <h2 className="text-2xl font-bold text-gray-800 text-center py-4 bg-gradient-to-r from-pink-50 to-pink-100">{name}</h2>
         <div className="overflow-hidden h-[400px]">
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
@@ -64,7 +63,7 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
         <p className="text-gray-600 mb-6 leading-relaxed">{description}</p>
         
         <div className="space-y-3">
-          <div className="text-3xl font-bold text-red-600">{price}</div>
+          <div className="text-3xl font-bold text-pink-600">{price}</div>
           {priceEach && <p className="text-gray-500">{priceEach}</p>}
           {sizeInfo && <p className="text-gray-500 mb-6">{sizeInfo}</p>}
           
@@ -72,7 +71,7 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full block text-center px-6 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 group"
+            className="w-full block text-center px-6 py-4 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-xl font-semibold hover:from-pink-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 group"
           >
             <Truck className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
             <span>Comprar Agora</span>
