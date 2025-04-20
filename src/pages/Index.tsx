@@ -1,19 +1,18 @@
-
 import ProductCard from "@/components/ProductCard";
 import SpecialOffer from "@/components/SpecialOffer";
 import TrustBadges from "@/components/TrustBadges";
 import CountdownTimer from "@/components/CountdownTimer";
 import { useToast } from "@/components/ui/use-toast";
 
-// Product data
+// Updated product data with the descriptions from the image
 const productData = [
   {
     id: "kit1",
-    name: "Kit Santidade - 7 Peças",
+    name: "Kit Elegância - 7 Peças",
     price: "R$349,00",
     priceEach: "7 peças - Cada vestido sai por apenas R$49,90",
     sizeInfo: "Tamanho único 36/42",
-    description: "Vestidos midi com manga, discretos e muito elegantes. Ideal para igrejas e eventos.",
+    description: "Vestidos sofisticados em tons elegantes, com detalhes refinados e acabamento premium.",
     images: ["/lovable-uploads/aac48638-db3f-4105-bba1-937ab832feba.png"],
   },
   {
@@ -74,49 +73,39 @@ const Index = () => {
       title: "Pedido em processamento",
       description: "Você será redirecionado para finalizar seu pedido em instantes.",
     });
-    // Redirect will happen via the link, not programmatically
   };
 
   return (
-    <div className="min-h-screen bg-boutiqueRosaPink">
-      {/* Countdown timer at the very top spanning full width */}
+    <div className="min-h-screen bg-gray-50">
+      {/* Full-width countdown timer */}
       <CountdownTimer />
       
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl font-playfair font-bold text-boutiqueDarkPink mb-3 leading-tight">
+        <header className="text-center mb-12">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-boutiqueDarkPink mb-6 leading-tight">
             Promoção por tempo limitado - Kit de Vestidos no Atacado
           </h1>
-          <p className="text-xl md:text-2xl font-playfair text-black font-bold mb-2">
+          <p className="text-2xl md:text-3xl font-playfair text-black font-bold mb-4">
             A partir de R$49,90 cada peça
-          </p>
-          <p className="text-boutiqueGray max-w-2xl mx-auto mb-4">
-            São 6 kits exclusivos com 7 vestidos selecionados em cada, ideais para revender na sua cidade! Tamanho único 36/42 disponível.
           </p>
           
           <SpecialOffer />
         </header>
         
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Products Grid - Improved responsive layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {productData.map((product) => (
             <ProductCard 
               key={product.id}
-              id={product.id}
-              name={product.name}
-              price={product.price}
-              priceEach={product.priceEach}
-              sizeInfo={product.sizeInfo}
-              description={product.description}
-              images={product.images}
+              {...product}
             />
           ))}
         </div>
         
-        {/* Call to Action */}
-        <div id="finalizar-pedido" className="bg-boutiqueRosaPink border-2 border-white rounded-lg p-6 mt-10 mb-6 text-center">
-          <h2 className="text-2xl font-playfair font-bold text-boutiqueDarkPink mb-4">
+        {/* Call to Action - Enhanced styling */}
+        <div className="bg-white border-2 border-boutiqueDarkPink rounded-2xl p-8 mt-16 mb-8 text-center shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-playfair font-bold text-boutiqueDarkPink mb-6">
             Gostou? Já escolheu seu kit? Clique abaixo e finalize seu pedido com a gente!
           </h2>
           <a 
@@ -124,7 +113,7 @@ const Index = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={handlePlaceOrder}
-            className="px-6 py-3 bg-boutiqueDarkPink text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-200 transform hover:scale-105 inline-block"
+            className="inline-block px-8 py-4 bg-boutiqueDarkPink text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-md"
           >
             Fechar meu pedido agora
           </a>
@@ -133,7 +122,7 @@ const Index = () => {
         {/* Trust Badges */}
         <TrustBadges />
         
-        <footer className="text-center text-boutiqueLightGray text-sm mt-8">
+        <footer className="text-center text-boutiqueLightGray text-sm mt-12">
           <p>© 2025 - Moda Evangélica Atacado | Todos os direitos reservados</p>
         </footer>
       </div>

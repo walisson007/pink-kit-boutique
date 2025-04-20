@@ -1,6 +1,11 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+} from "@/components/ui/card";
 
 interface ProductCardProps {
   id: string;
@@ -23,34 +28,32 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  // Extract kit name for WhatsApp message
   const kitName = name.split('-')[0].trim();
   const whatsappMessage = `Olá, escolhi o ${kitName} e quero fechar meu pedido!`;
   const whatsappLink = `https://wa.me/5538997483702?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+    <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl">
       <div className="relative">
-        <div className="overflow-hidden h-80 relative">
+        <div className="overflow-hidden h-96 relative">
           <img 
             src={images[currentImageIndex]} 
             alt={`${name} - imagem ${currentImageIndex + 1}`} 
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center transform transition-transform duration-700 hover:scale-105"
           />
           
-          {/* Navigation buttons */}
           {images.length > 1 && (
             <>
               <button 
                 onClick={goToPreviousImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md text-boutiqueDarkPink"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg text-boutiqueDarkPink transition-all duration-300 hover:scale-110"
                 aria-label="Imagem anterior"
               >
                 <ChevronLeft size={24} />
               </button>
               <button 
                 onClick={goToNextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-1 rounded-full shadow-md text-boutiqueDarkPink"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg text-boutiqueDarkPink transition-all duration-300 hover:scale-110"
                 aria-label="Próxima imagem"
               >
                 <ChevronRight size={24} />
@@ -58,35 +61,34 @@ const ProductCard = ({ id, name, price, priceEach, sizeInfo, description, images
             </>
           )}
           
-          {/* Image counter */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-2 py-1 rounded-full text-xs">
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-xs">
             {currentImageIndex + 1} / {images.length}
           </div>
         </div>
       </div>
       
-      <div className="p-4">
-        <h2 className="text-xl font-montserrat font-bold text-boutiqueDarkPink mb-2">{name}</h2>
-        <p className="text-boutiqueGray mb-3 text-sm">{description}</p>
+      <CardContent className="p-6">
+        <h2 className="text-2xl font-montserrat font-bold text-boutiqueDarkPink mb-3">{name}</h2>
+        <p className="text-boutiqueGray mb-4 text-base leading-relaxed">{description}</p>
         
-        <div className="mt-3">
-          <div className="text-xl font-semibold text-boutiqueDarkPink mb-1">{price}</div>
-          {priceEach && <p className="text-sm text-boutiqueGray mb-1">{priceEach}</p>}
-          {sizeInfo && <p className="text-sm text-boutiqueGray mb-3">{sizeInfo}</p>}
+        <div className="space-y-2">
+          <div className="text-2xl font-semibold text-boutiqueDarkPink">{price}</div>
+          {priceEach && <p className="text-sm text-boutiqueGray">{priceEach}</p>}
+          {sizeInfo && <p className="text-sm text-boutiqueGray mb-4">{sizeInfo}</p>}
           
-          <div className="flex justify-end">
+          <div className="pt-4">
             <a 
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-boutiqueDarkPink text-white rounded-md font-medium hover:bg-opacity-90 transition-colors duration-200"
+              className="w-full block text-center px-6 py-3 bg-boutiqueDarkPink text-white rounded-md font-medium hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-md"
             >
               Comprar
             </a>
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 

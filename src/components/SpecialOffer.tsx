@@ -3,15 +3,15 @@ import { Truck } from "lucide-react";
 
 const SpecialOffer = () => {
   return (
-    <div className="bg-black text-red-600 py-3 px-4 rounded-lg font-medium text-center mb-6">
-      <p className="font-bold text-lg">Oferta especial kit completo por R$349,00</p>
-      <div className="flex justify-center mt-2">
-        <button className="bg-red-600 text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-red-700 transition-colors">
-          <Truck size={18} />
-          <span className="uppercase font-semibold">FRETE GRÁTIS</span>
-        </button>
-      </div>
-      <p className="text-sm font-bold mt-3">Somente hoje!</p>
+    <div className="bg-black p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+      <p className="text-red-600 font-bold text-2xl md:text-3xl mb-4">
+        Oferta especial kit completo por R$349,00
+      </p>
+      <button className="bg-red-600 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-red-700 transition-colors mx-auto">
+        <Truck className="w-5 h-5" />
+        <span className="font-semibold">FRETE GRÁTIS</span>
+      </button>
+      <p className="text-red-600 font-bold mt-4 text-lg">Somente hoje!</p>
     </div>
   );
 };

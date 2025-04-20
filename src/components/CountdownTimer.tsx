@@ -7,10 +7,10 @@ const CountdownTimer = () => {
   useEffect(() => {
     const calculateTimeRemaining = () => {
       const now = new Date();
-      const midnight = new Date();
-      midnight.setHours(24, 0, 0, 0);
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
       
-      const diff = midnight.getTime() - now.getTime();
+      const diff = endOfDay.getTime() - now.getTime();
       
       const hours = Math.floor(diff / (1000 * 60 * 60));
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -29,10 +29,10 @@ const CountdownTimer = () => {
   }, []);
 
   return (
-    <div className="bg-black text-red-600 py-3 w-full font-bold text-center mb-6">
-      <div className="container mx-auto">
-        <p className="text-lg mb-2">Essa Promoção encerra em</p>
-        <div className="text-2xl md:text-3xl tracking-wider">{timeRemaining}</div>
+    <div className="bg-black py-4 w-full font-bold text-center sticky top-0 z-50 shadow-md">
+      <div className="container mx-auto px-4">
+        <p className="text-red-600 text-lg mb-1">Essa Promoção encerra em</p>
+        <div className="text-3xl md:text-4xl tracking-wider text-red-600 font-mono">{timeRemaining}</div>
       </div>
     </div>
   );
